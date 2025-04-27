@@ -1,4 +1,4 @@
-  Welcome to mr.dvd-s-E2s-and-Dupes
- # Dupes files go's in your SteamLidrary/steamapps/common/GarrysMod/garrysmod/data/advdupe2 #
-#  E2s files go's in your SteamLidrary/steamapps/common/GarrysMod/garrysmod/data/expression2 #
-# Mostly The E2s Are Made By me and Some Are Edited By Me Crediteds To All
+  Welcome to MrDvds E2s & Dupes!
+ Dupes files go's in your SteamLidrary/steamapps/common/GarrysMod/garrysmod/data/advdupe2
+E2s files go's in your SteamLidrary/steamapps/common/GarrysMod/garrysmod/data/expression2
+# Mostly the E2s are made by me, and some are edited By Me! Credit to all!
