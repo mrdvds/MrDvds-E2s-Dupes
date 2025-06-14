@@ -1,0 +1,79 @@
+@name G Scale Body mr.dvd - edit
+@inputs Entity:entity Load
+@outputs 
+@persist E:entity 
+@persist A
+@trigger 
+@model models/wingf0x/isaplug.mdl
+StripeColor1 = vec(38,56,88)    #----Blue
+StripeColor2 = vec(235,167,70) #----Yellow
+StripeColor3 = vec(255,255,255)    #----Cab Roof
+Chip =Entity
+ClipAngle = 45
+Entity:setAlpha(0)
+X=10 
+Z=9 
+L=8 
+K=7 
+J=6 
+H=5 
+G=4 
+F=3               
+D=2
+A=1#locomotive Holo
+holoCreate(A,Chip:toWorld(+vec(0,0,-2)),vec(0.5),Chip:toWorld(+ang(0,0,0))) #locomotive Holo Entity
+holoCreate(D,Chip:toWorld(+vec(0,-71,-9)),vec(0.2),Chip:toWorld(+ang(0,270,0))) #plow holo Entity
+holoCreate(F,Chip:toWorld(+vec(0,-52,27)),vec(0.2),Chip:toWorld(+ang(0,270,0))) #horn holo Entity
+holoCreate(G,Chip:toWorld(+vec(8,-24,-2)),vec(0.2),Chip:toWorld(+ang(0,270,0))) #bell holo Entity
+holoCreate(H,Chip:toWorld(+vec(0,-57,24)),vec(0.2),Chip:toWorld(+ang(0,270,0))) #headlight holo Entity
+holoCreate(K,Chip:toWorld(+vec(4,-57,24)),vec(0.3),Chip:toWorld(+ang(90,280,0))) #numplate holo Entity
+holoCreate(L,Chip:toWorld(+vec(-4,-57,24)),vec(0.3),Chip:toWorld(+ang(90,260,0))) #numplate 2 holo Entity
+holoCreate(Z,Chip:toWorld(+vec(-4,68,23)),vec(0.3),Chip:toWorld(+ang(90,99,0))) #numplate 3 holo Entity
+holoCreate(X,Chip:toWorld(+vec(4,68,23)),vec(0.3),Chip:toWorld(+ang(90,80,0))) #numplate 4 holo Entity
+holoCreate(J,Chip:toWorld(+vec(0,68,23)),vec(0.2),Chip:toWorld(+ang(0,90,0))) #headlight back holo Entity
+holoModel(A,"models/magtrainslocos/alco_c425.mdl") #locomotive model
+holoModel(D,"models/gsgtrainprops/parts/footboards/footboards_alco.mdl") #plow model
+holoModel(F,"models/gsgtrainprops/parts/horns/leslie_rs5t.mdl") #horn model
+holoModel(G,"models/anytrains/props/detail/12in_emd_bell_brass.mdl") #bell model
+holoModel(H,"models/gsgtrainprops/parts/headlights/pyle_plate.mdl") #headlight model
+holoModel(J,"models/gsgtrainprops/parts/headlights/pyle_plate.mdl") #headlight back model
+holoModel(K,"models/magtrainslocos/numplates/numplate_mcab_nose_3d.mdl") #numplate holo model
+holoModel(L,"models/magtrainslocos/numplates/numplate_mcab_nose_3d.mdl") #numplate 2 holo model
+holoModel(Z,"models/magtrainslocos/numplates/numplate_mcab_nose_3d.mdl") #numplate 3 holo model
+holoModel(X,"models/magtrainslocos/numplates/numplate_mcab_nose_3d.mdl") #numplate 4 holo model
+holoScale(A,vec(0.2,0.2,0.2))
+holoColor(A,vec(63,79,127))
+holoColor(F,vec(63,79,127)) #horn color
+holoColor(H,vec(63,79,127)) #headlight color
+holoColor(J,vec(63,79,127)) #headlight back color
+holoParent(A,Chip)
+holoParent(D,Chip)
+holoParent(F,Chip)
+holoParent(G,Chip)
+holoParent(H,Chip)
+holoParent(J,Chip)
+holoParent(K,Chip)
+holoParent(L,Chip)
+holoParent(Z,Chip)
+holoParent(X,Chip)
+holoAng(A,Chip:toWorld(ang(0,0,0)))
+holoEntity(A):setSubMaterial(0,"models/proppertextures/acrylic")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/enamel_black")
+holoEntity(D):setSubMaterial(1,"models/proppertextures/enamel_black") #plow material
+holoEntity(F):setSubMaterial(1,"models/proppertextures/acrylic") #horn material
+holoEntity(F):setSubMaterial(2,"models/proppertextures/acrylic") #horn material 2
+holoEntity(H):setSubMaterial(1,"models/proppertextures/acrylic") #headlight material 
+holoEntity(J):setSubMaterial(1,"models/proppertextures/acrylic") #headlight back material
+holoEntity(A):setSubMaterial(2,"models/proppertextures/enamel_black")
+holoClip(A,1,vec(0,0,0),vec(0,0,0),0)
+holoClipEnabled(A,1,1)
+#holoSkin(A,random(1))
+holoBodygroup(A,5,1)
+#numplate bodygroup
+holoBodygroup(K,1,1)
+#numplate bodygroup 2
+holoBodygroup(L,1,1)
+#numplate bodygroup 3
+holoBodygroup(Z,1,1)
+#numplate bodygroup 4
+holoBodygroup(X,1,1)

@@ -1,0 +1,66 @@
+@name MDR builders patey holo - made by mr.dvd
+@inputs 
+@outputs 
+@persist 
+@trigger 
+@model models/sprops/cuboids/height06/size_1/cube_6x6x6.mdl
+E = entity()
+ 
+
+
+
+
+    A = 1
+    holoCreate(A)
+    holoParent(A,E)
+    holoModel(A,"models/sprops/geometry/fdisc_18.mdl")
+    holoScale(A,vec(0.4,1,0.31))
+    holoAng(A,E:toWorld(ang(0,0,0)))
+    holoPos(A,E:toWorld(vec(0,0,0)))
+    holoColor(A,vec(255))
+    holoMaterial(A,"icegt/loco/ice_trainmetal_black")
+
+    A = 2
+    holoCreate(A)
+    holoParent(A,E)
+    holoModel(A,"models/sprops/misc/tubes/size_2/tube_24x6.mdl")
+    holoScale(A,vec(0.4,1,0.31))
+    holoAng(A,E:toWorld(ang(0,0,0)))
+    holoPos(A,E:toWorld(vec(0,0,0)))
+    holoColor(A,vec(255))
+    holoMaterial(A,"models/proppertextures/brass")
+    
+    A = 3
+    holoCreate(A)
+    holoParent(A,E)
+    holoModel(A,"models/sprops/misc/alphanum/alphanum_d.mdl")
+    holoScale(A,vec(0.2,0.1,0.3))
+    holoAng(A,E:toWorld(ang(0,0,0)))
+    holoPos(A,E:toWorld(vec(2.0,-2,0)))
+    holoColor(A,vec(255))
+    holoMaterial(A,"models/proppertextures/brass")
+    
+     A = 4
+    holoCreate(A)
+    holoParent(A,E)
+    holoModel(A,"models/sprops/misc/alphanum/alphanum_D.mdl")
+    holoScale(A,vec(0.2,0.1,0.3))
+    holoAng(A,E:toWorld(ang(0,1,0)))
+    holoPos(A,E:toWorld(vec(-2,-2,0)))
+    holoColor(A,vec(255))
+    holoMaterial(A,"models/proppertextures/brass")
+    
+         A = 5
+    holoCreate(A)
+    holoParent(A,E)
+    holoModel(A,"models/sprops/misc/alphanum/alphanum_v.mdl")
+    holoScale(A,vec(0.1,0.1,0.3))
+    holoAng(A,E:toWorld(ang(0,0,0)))
+    holoPos(A,E:toWorld(vec(0.2,-2,0)))
+    holoColor(A,vec(255))
+    holoMaterial(A,"models/proppertextures/brass")
+
+
+
+
+

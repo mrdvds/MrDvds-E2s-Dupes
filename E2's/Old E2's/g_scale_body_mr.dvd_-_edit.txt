@@ -1,0 +1,31 @@
+@name G Scale Body mr.dvd - edit
+@inputs Entity:entity Load
+@outputs 
+@persist E:entity 
+@persist A
+@trigger 
+@model models/wingf0x/isaplug.mdl
+StripeColor1 = vec(38,56,88)    #----Blue
+StripeColor2 = vec(235,167,70) #----Yellow
+StripeColor3 = vec(255,255,255)    #----Cab Roof
+Chip =Entity
+ClipAngle = 45
+Entity:setAlpha(0)
+               
+D=2
+A=1#Holo
+holoCreate(A,Chip:toWorld(+vec(0,0,-2)),vec(0.5),Chip:toWorld(+ang(0,0,0)))
+holoModel(A,"models/magtrainslocos/alco_c425.mdl")
+holoScale(A,vec(0.2,0.2,0.2))
+holoColor(A,vec(63,79,127))
+holoParent(A,Chip)
+holoAng(A,Chip:toWorld(ang(0,0,0)))
+holoEntity(A):setSubMaterial(0,"models/proppertextures/acrylic")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/enamel_black")
+holoEntity(A):setSubMaterial(2,"models/proppertextures/enamel_black")
+holoClip(A,1,vec(0,0,0),vec(0,0,0),0)
+holoClipEnabled(A,1,1)
+#holoSkin(A,random(1))
+holoBodygroup(A,5,1)
+
+

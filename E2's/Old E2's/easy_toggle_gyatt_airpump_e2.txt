@@ -1,0 +1,31 @@
+@name easy toggle gyatt airpump e2
+@inputs Compressing
+@outputs Compressing
+@persist [RunSound RunSound2 OffSound OffSound2]:string SmoothTable:table ValveAmmount 
+@trigger 
+
+
+ RunSound = "locnoisbygeordie/steam/misc/air_pump5_loop_slow.wav"
+    OffSound = "locnoisbygeordie/steam/misc/air_pump5_end_slow.wav"
+
+  RunSound2 = "locnoisbygeordie/steam/misc/air_pump5_loop_fast.wav"
+    OffSound2 = "locnoisbygeordie/steam/misc/air_pump5_end_fast.wav"
+    
+
+
+if(Compressing==1){   
+    soundStop(1)
+    soundStop(2) 
+    entity():soundPlay(3,0,RunSound2)
+    soundVolume(3,1)
+    soundLevel(3,78)
+}elseif(Compressing==0 & (Compressing)){
+    soundStop(3)
+    entity():soundPlay(4,0,RunSound)
+    soundLevel(4,78)
+}elseif(Compressing==0 & (!Compressing)){
+    soundStop(3)
+    entity():soundPlay(4,0,OffSound2)
+    soundLevel(4,78)
+
+}
