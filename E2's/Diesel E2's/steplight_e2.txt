@@ -1,0 +1,36 @@
+@name Steplight E2
+@inputs A
+@outputs 
+@persist 
+@strict
+
+# Made By Mr.Dvd & Code By EnginesThey'reAmazing #
+
+
+
+E=1
+spriteSpawn(E,"effects/lamp_beam")
+spriteSetParent(E,entity())
+spriteSetScale(E,(0.5))
+spriteSetPos(E,entity():toWorld(vec(0,0,0)))
+spriteSetColor(E,vec(255))
+spriteSetAlpha(E,254)
+
+#[
+spriteSpawn(A,"")
+spriteSetParent(A,entity())
+spriteSetScale(A,(0.5))
+spriteSetPos(A,entity():toWorld(vec(0,0,0)))
+spriteSetColor(A,vec(0))
+spriteSetAlpha(A,0)
+]#
+
+if(A){
+    
+spriteEnable(1,1)
+   
+}else{
+      
+spriteEnable(1,0)
+    
+}
