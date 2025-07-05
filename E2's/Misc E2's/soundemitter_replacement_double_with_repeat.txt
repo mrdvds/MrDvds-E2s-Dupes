@@ -1,0 +1,63 @@
+@name SoundEmitter Replacement Double with Repeat
+@inputs A Pitch
+@outputs SoundOn:string SoundOff:string
+@persist SoundOn:string SoundOff:string Default_Pitch Default_Volume H:entity NextPlay
+@trigger 
+
+#This E2 was made by Mr.Dvd, This E2 is for sound files that stop, This e2 makes the sound file loop.
+
+
+interval(100)  # run every 0.1 seconds
+
+if (first() | duped()) {
+    SoundOn = "andyspack/sfx/bttfsound/timecircuits/beep.wav"   # <- Sound Path
+    SoundOff = ""  # <- End Sound Path - Its Just Here If Needed
+
+    Default_Pitch = 100
+    Default_Volume = 1
+
+    H = holoCreate(0, entity():pos())
+    holoAlpha(0, 0)
+    holoParent(0, entity())
+
+    NextPlay = 0
+}
+
+# When A is pressed
+if (A & ~A) {
+    soundStop(1)
+    soundStop(3)
+    soundPlay(0, 0, SoundOn)
+    H:soundPlay(2, 0, SoundOn)
+    soundVolume(0, Default_Volume)
+    soundVolume(2, Default_Volume)
+    NextPlay = curtime() + 2.0  # <- Change this based on your sound length
+}
+
+# When A is released
+elseif (!A & ~A) {
+    soundStop(0)
+    soundStop(2)
+    soundPlay(1, 1, SoundOff)
+    H:soundPlay(3, 1, SoundOff)
+    soundVolume(1, Default_Volume)
+    soundVolume(3, Default_Volume)
+}
+
+# Repeat the On sound every X seconds while held
+if (A & curtime() >= NextPlay) {
+    soundStop(0)
+    soundStop(2)
+    soundPlay(0, 0, SoundOn)
+    H:soundPlay(2, 0, SoundOn)
+    soundVolume(0, Default_Volume)
+    soundVolume(2, Default_Volume)
+    NextPlay = curtime() + 2.0  # <- Set this to your sounds duration
+}
+
+# Update pitch continuously
+for (N = 0, 3) {
+    soundPitch(N, Pitch ? Pitch * 100 : Default_Pitch)
+}
+
+
